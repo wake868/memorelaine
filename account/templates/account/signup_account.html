@@ -1,1 +1,12 @@
-<h1>Account Signup</h1>
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}MemorElaine | Signup{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Account Signup</h1>
+    {{ form.as_p }}
+</div>
+    
+{% endblock %}
