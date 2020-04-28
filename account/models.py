@@ -4,20 +4,16 @@ from django.contrib.auth.models import User
 
 
 class Account(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
     address1 = models.CharField(max_length=100, blank=True)
     address2 = models.CharField(max_length=100, blank=True)
     city = models.CharField(max_length=100, blank=True)
     state = models.CharField(max_length=2, blank=True)
     zip_code = models.IntegerField(blank=True)
     country = models.CharField(max_length=2, blank=True)
-    phone = models.CharField(blank=True)
-    email = models.CharField(max_length=75)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(null=True, blank=True)
+    phone = models.CharField(max_length=15, blank=True)
 
     # Django User model relationship
+    # this model contains first_name, last_name, email, username and persmissions
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
