@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include('memorywall.urls')),
 
     # ACCOUNTS APP URLS
-    path('account/', include('account.urls')),
+    path('profile/', include('profile.urls')),
 ]

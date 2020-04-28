@@ -1,0 +1,15 @@
+{% extends "profile/base.html" %}
+{% load static %}
+
+{% block title %}MemorElaine | Signup{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <form method="post">
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button class="btn btn-primary" type="submit">Finish</button>
+    </form>
+</div>
+    
+{% endblock %}

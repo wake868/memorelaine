@@ -1,0 +1,25 @@
+{% extends "profile/base.html" %}
+{% load static %}
+
+{% block title %}MemorElaine | Signup{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        <p>
+            <label for="password_check">Confirm Password</label>
+            <input type="password" name="password_check" id="password_check">
+        </p>
+        
+        <button class="btn btn-primary" type="submit">Next</button>
+    </form>
+</div>
+    
+{% endblock %}

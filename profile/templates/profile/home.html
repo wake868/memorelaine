@@ -1,0 +1,9 @@
+
+
+{% if user.is_authenticated %}
+<form method="POST" action="{% url 'profile:logout_user' %}">
+    {% csrf_token %}
+    <button id="signOutBtn" type="submit">Logout</button>
+</form>
+{% endif %}
+<h1>Account</h1>
