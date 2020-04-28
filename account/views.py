@@ -19,7 +19,7 @@ def signup_account(request):
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('memorywall:home')
+                return redirect('aacount:home')
             except IntegrityError:
                 return render(request, 'account/signup_account.html', {'form': UserCreationForm(), 'error': 'Username already in use. Please choose a different username.'})
 
